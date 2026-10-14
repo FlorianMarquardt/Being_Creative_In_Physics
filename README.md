@@ -69,3 +69,8 @@ You can work with **Jupyter notebooks** or with **plain Python scripts**, whiche
 Notebooks are convenient for interactive exploration and plots. Plain `.py` files are often easier
 for AI coding assistants (such as Claude Code or Copilot agent mode) to read, edit and run on their own.
 
+## License
+
+Code is released under the [MIT License](LICENSE); all other content (text, notebooks, figures) under
+[CC BY 4.0](LICENSE-CC-BY-4.0.txt). Some episodes have additional authors, named in the episode's README.
+
