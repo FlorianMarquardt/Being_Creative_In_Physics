@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Large or generated output (keep figures you want to share in the wiki instead)
+*.mp4
+*.gif
+output/
+
+# Plaintext sources of hidden helper code (see tools/hide_code.py)
+private/
