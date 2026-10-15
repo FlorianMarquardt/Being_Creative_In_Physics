@@ -9,7 +9,7 @@ a few days.
 You need:
 
 1. Python 3.10 or newer, with a few scientific packages
-2. Visual Studio Code (VS Code), or another editor you like (not necessary when using a tool like claude code in the terminal)
+2. A way to run notebooks: Visual Studio Code (VS Code), or JupyterLab in your web browser (an editor is not necessary for scripts when using a tool like claude code in the terminal)
 3. Access to an AI coding assistant (at least one per team)
 4. A copy of this repository
 
@@ -46,21 +46,69 @@ pip install -r requirements.txt
 python -c "import numpy, scipy, matplotlib, ipywidgets; print('all good')"
 ```
 
-## 2. VS Code
+## 2. Running notebooks and scripts
+
+The episodes come as Jupyter notebooks (`.ipynb`) and plain Python scripts (`.py`). A notebook mixes
+text, code cells and their output (plots, animations, interactive widgets). Every notebook runs on a
+**kernel**: a Python process in the background that executes the cells. The kernel must belong to the
+environment where you installed the packages above. Most notebook problems come from a wrong kernel.
+
+There are two good ways to work with notebooks. Both work fine; pick one.
+
+### Option A: VS Code
 
 Especially if you are using the github copilot setup, you may want to install the free VS Code editor (from Microsoft). For other setups, like claude code in the terminal, no editor is even needed.
 
-1. Install VS Code from https://code.visualstudio.com.
+1. Install VS Code from https://code.visualstudio.com, or update it if you already have it
+   (*Code → Check for Updates…* on macOS, *Help → Check for Updates…* on Windows/Linux).
+   Old versions do not show the images embedded in our notebooks.
 2. Install the extensions **Python** and **Jupyter** (both by Microsoft) from the Extensions panel.
+   After installing or updating extensions, quit VS Code completely and start it again.
 3. Open the repository folder (*File → Open Folder…*).
-4. Open a notebook (`.ipynb`). In the upper right corner, click *Select Kernel* and choose the
-   environment you created above (`creative` or `.venv`).
+4. Open a notebook (`.ipynb`). In the upper right corner, click *Select Kernel* →
+   *Python Environments…* and choose the environment you created above (`creative` or `.venv`).
+   If VS Code offers to install `ipykernel` into that environment, accept.
+5. Run a cell with Shift+Enter or the ▶ next to it. *Restart* and *Interrupt* are in the toolbar
+   at the top of the notebook.
+
+The first time a notebook shows an interactive widget (for example the drawing grid in Episode 1),
+VS Code may ask whether it may download supporting files for the widgets from a public package server
+(jsDelivr or unpkg). This is normal; allow it. If it suggests installing extra extensions, it is fine
+to accept those published by Microsoft.
 
 To run a plain Python script, open it and click the ▶ button, or run `python script.py` in the
 VS Code terminal (*Terminal → New Terminal*).
 
-If you prefer the classic Jupyter interface instead of VS Code, run `jupyter lab` (or
-`jupyter notebook`) in the repository folder.
+### Option B: JupyterLab in your web browser
+
+JupyterLab is the standard notebook interface. It was installed together with the packages above
+(as part of `jupyter`), needs no editor, and runs in your web browser.
+
+1. Open a terminal, activate your environment and go to the repository folder:
+
+   ```bash
+   conda activate creative          # or: source .venv/bin/activate
+   cd <repository folder>
+   jupyter lab
+   ```
+
+   This starts a local Jupyter server and opens it in your browser (at an address like
+   `http://localhost:8888/lab`). Keep the terminal open while you work. Nothing is sent to the
+   internet; the "server" runs on your own computer.
+2. Use the file browser on the left to open a notebook, e.g.
+   `episodes/01_mysterious_rule_of_life/Episode1.ipynb`.
+3. Check the kernel name in the upper right corner of the notebook (normally *Python 3 (ipykernel)*).
+   Because you started Jupyter from the activated environment, this kernel uses that environment.
+4. Run a cell with Shift+Enter, or run everything with *Run → Run All Cells*. To stop a calculation
+   that hangs, press ■ (interrupt) in the toolbar; if that does not help, use
+   *Kernel → Restart Kernel…*. Interactive widgets work without any extra installation.
+5. Save with Ctrl+S (Cmd+S on macOS). When you are done, choose *File → Shut Down*, or press
+   Ctrl+C in the terminal.
+
+`jupyter notebook` instead of `jupyter lab` opens the simpler classic interface, which works the
+same way. You can also open a terminal inside JupyterLab (*File → New → Terminal*) to run scripts
+with `python script.py`, or to start a terminal-based AI assistant such as Claude Code. If an AI tool
+changes a notebook file on disk while it is open, JupyterLab will ask whether to reload it.
 
 ## 3. AI assistant
 
@@ -100,8 +148,8 @@ Install it following https://docs.claude.com/en/docs/claude-code/overview, then 
 With git:
 
 ```bash
-git clone <repository URL>
-cd <repository folder>
+git clone https://github.com/FlorianMarquardt/Being_Creative_In_Physics.git
+cd Being_Creative_In_Physics
 ```
 
 Without git: download the repository as a ZIP file from its GitHub page (*Code → Download ZIP*)
@@ -115,7 +163,16 @@ When new episodes are added, update your copy with `git pull` (or download the Z
 
 - **`ModuleNotFoundError`**: the notebook is using a different Python than the one you installed
   the packages into. Select the right kernel in VS Code, or run `pip install -r requirements.txt`
-  in the environment the notebook uses.
+  in the environment the notebook uses. In JupyterLab, quit and start `jupyter lab` again from a
+  terminal in which your environment is activated.
+- **VS Code: cells keep spinning, produce no output and cannot be interrupted**: the kernel never
+  started. Usually either (a) VS Code or its extensions were just updated and the old extensions are
+  still loaded: quit VS Code completely and start it again; or (b) the selected kernel is a Python
+  without `ipykernel` (e.g. a system Python): choose your course environment via *Select Kernel*.
+- **VS Code: images inside a notebook show as broken**: update VS Code (see Option A above).
+- **`jupyter: command not found`**: your environment is not activated in this terminal
+  (`conda activate creative` or `source .venv/bin/activate`).
 - **Interactive widgets (buttons, sliders) do not show up**: make sure `ipywidgets` is installed in
-  the kernel's environment, and restart the kernel.
+  the kernel's environment, and restart the kernel. In VS Code, allow the download of the widget
+  support files when asked (see Option A above).
 - **Animations are slow**: reduce the grid size or the number of time steps.
