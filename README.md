@@ -71,6 +71,6 @@ for AI coding assistants (such as Claude Code or Copilot agent mode) to read, ed
 
 ## License
 
-Code is released under the [MIT License](LICENSE); all other content (text, notebooks, figures) under
+Code (Python files and notebooks) is released under the [MIT License](LICENSE); all other content (markdown files, figures) under
 [CC BY 4.0](LICENSE-CC-BY-4.0.txt). Some episodes have additional authors, named in the episode's README.
 

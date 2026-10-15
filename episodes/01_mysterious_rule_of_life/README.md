@@ -20,3 +20,10 @@ Conceived and written by Soeren Arlt (MPL), slightly updated by Florian Marquard
 
 Open `Episode1.ipynb` in VS Code or Jupyter and run the cells from top to bottom. The drawing grid
 uses `ipywidgets`, see [SETUP.md](../../SETUP.md).
+
+## Spoiler warning: original versions
+
+Soeren Arlt's original web versions of this game are at https://github.com/soerenarlt/conways_mystery
+and https://github.com/soerenarlt/conways_mystery_2 (an extended variant). Their source code reveals
+the modified rules, so **only look at them after you have finished the episode** (and don't let your
+AI assistant look either).

@@ -20,3 +20,10 @@ output/
 
 # Plaintext sources of hidden helper code (see tools/hide_code.py)
 private/
+
+# Literature research notes and reports (curate into the repo separately)
+research_notes/
+reports/
+
+# Local Claude Code settings
+.claude/settings.local.json

@@ -1,8 +1,8 @@
 This repository is dual-licensed:
 
-- Code (Python files, and the code cells of Jupyter notebooks) is licensed
-  under the MIT License, reproduced below.
-- All other content (text, markdown files, notebook text, figures) is licensed
+- Code, i.e. Python files and Jupyter notebooks (including their text cells),
+  is licensed under the MIT License, reproduced below.
+- All other content (markdown files, figures, other documents) is licensed
   under the Creative Commons Attribution 4.0 International License (CC BY 4.0),
   see LICENSE-CC-BY-4.0.txt.
 
