@@ -8,7 +8,7 @@ a few days.
 
 You need:
 
-1. Python 3.10 or newer, with a few scientific packages
+1. Python 3.10 or newer, with a few scientific packages (not needed if you work in Google Colab, see section 2, Option C)
 2. A way to run notebooks: Visual Studio Code (VS Code), or JupyterLab in your web browser (an editor is not necessary for scripts when using a tool like claude code in the terminal)
 3. Access to an AI coding assistant (at least one per team)
 4. A copy of this repository
@@ -53,7 +53,7 @@ text, code cells and their output (plots, animations, interactive widgets). Ever
 **kernel**: a Python process in the background that executes the cells. The kernel must belong to the
 environment where you installed the packages above. Most notebook problems come from a wrong kernel.
 
-There are two good ways to work with notebooks. Both work fine; pick one.
+There are three good ways to work with notebooks; pick one.
 
 ### Option A: VS Code
 
@@ -110,11 +110,49 @@ same way. You can also open a terminal inside JupyterLab (*File → New → Term
 with `python script.py`, or to start a terminal-based AI assistant such as Claude Code. If an AI tool
 changes a notebook file on disk while it is open, JupyterLab will ask whether to reload it.
 
+### Option C: Google Colab (no installation)
+
+[Google Colab](https://colab.research.google.com) runs notebooks on Google's servers, so you only need
+a browser and a Google account. numpy, scipy, matplotlib and ipywidgets are already installed there.
+
+1. Open a notebook: *File → Open notebook → GitHub*, paste the repository URL
+   `https://github.com/FlorianMarquardt/Being_Creative_In_Physics` and pick the notebook from the list.
+   (Or *File → Upload notebook* with a downloaded `.ipynb` file.)
+2. **Helper files**: many episodes need a helper file next to the notebook (e.g.
+   `Episode1_life_helper.py` for Episode 1). Colab does not fetch it automatically. Either upload it
+   via the folder icon on the left (*Files → Upload*), or run this in a first code cell, which
+   downloads the whole repository and moves into the episode folder:
+
+   ```python
+   !git clone https://github.com/FlorianMarquardt/Being_Creative_In_Physics.git
+   %cd Being_Creative_In_Physics/episodes/01_mysterious_rule_of_life
+   ```
+
+3. Uploaded files and changes are **deleted when the Colab session ends**. To keep your notebook,
+   use *File → Save a copy in Drive*, and download any results you want to keep.
+
 ## 3. AI assistant
 
-Each team needs at least one working AI licence. Any capable assistant works. Two options:
+Each team needs at least one working AI licence. Any capable assistant works. There are various options:
+
+### duck.ai
+
+[duck.ai](https://duck.ai): free chat access to the (smaller) versions of the models from OpenAI,
+Anthropic, Mistral, and others. Fast and absolutely sufficient for many programming tasks you will
+encounter. Part of the privacy-centred alternative search engine DuckDuckGo. The only catch is you
+will need to copy the code from the browser into your jupyter notebook or python development
+environment.
+
+### Google Colab / Gemini
+
+[Google Colab](https://colab.research.google.com): free (with google account) jupyter notebook online
+(so you don't need a python installation on your computer). Offers access to Google Gemini AI. Code
+completions and code generation from chat. (but I don't know whether there are usage limits)
 
 ### GitHub Copilot (free for students)
+
+Free for students after signup. Most tightly integrated into the Visual Studio Code development
+environment from Microsoft (github is also part of Microsoft).
 
 1. Create a GitHub account at https://github.com, or use an existing one. Your **university email** must be
    registered with it (you can add it as a secondary address under *Settings → Emails*).

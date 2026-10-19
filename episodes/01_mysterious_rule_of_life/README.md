@@ -21,6 +21,9 @@ Conceived and written by Soeren Arlt (MPL), slightly updated by Florian Marquard
 Open `Episode1.ipynb` in VS Code or Jupyter and run the cells from top to bottom. The drawing grid
 uses `ipywidgets`, see [SETUP.md](../../SETUP.md).
 
+In Google Colab, upload `Episode1_life_helper.py` next to the notebook first, or clone the
+repository in a first cell (see [SETUP.md](../../SETUP.md), Option C).
+
 ## Spoiler warning: original versions
 
 Soeren Arlt's original web versions of this game are at https://github.com/soerenarlt/conways_mystery
