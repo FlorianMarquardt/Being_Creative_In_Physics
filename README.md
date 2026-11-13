@@ -39,7 +39,7 @@ the format for writing up research progress in the wiki.
 |---|---------|----------|
 | 0 | *Example:* Physics on a swing (shows the wiki format) | [`episodes/00_physics_on_a_swing`](episodes/00_physics_on_a_swing) |
 | 1 | The mysterious rule of life | [`episodes/01_mysterious_rule_of_life`](episodes/01_mysterious_rule_of_life) |
-| 2 | Galileo's last theorem | *coming soon* |
+| 2 | Galileo's last theorem | [`episodes/02_galileos_last_theorem`](episodes/02_galileos_last_theorem) |
 | 3 | The broken clockwork hypothesis | *coming soon* |
 | 4 | Kepler's voyage | *coming soon* |
 
